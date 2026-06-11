@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leela Krishna Marri Muni - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1b2a; --navy-mid: #1a2e45; --accent: #00b4d8;
+      --white: #ffffff; --lgray: #c5d3de; --mgray: #8fa8bf;
+      --body: #333333; --dark: #1a1a2e; --divider: #1e3348;
+      --tag-bg: #162436; --tag-border: #1e3a52; --main-bg: #fafbfc;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--body); line-height: 1.65; font-size: 14px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrapper { display: grid; grid-template-columns: 265px 1fr; min-height: 100vh; }
+
+    /* ── SIDEBAR ── */
+    aside {
+      background: var(--navy);
+      padding: 40px 24px 40px 28px;
+      border-right: 1px solid var(--divider);
+      position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    }
+    aside::-webkit-scrollbar { width: 4px; }
+    aside::-webkit-scrollbar-thumb { background: var(--navy-mid); border-radius: 2px; }
+
+    .name-block { margin-bottom: 28px; }
+    .name-block h1 { font-size: 22px; font-weight: 700; color: var(--white); line-height: 1.2; letter-spacing: -0.3px; }
+    .name-block .role { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.4px; margin-top: 8px; }
+
+    .s-section { margin-bottom: 22px; }
+    .s-section h2 {
+      font-size: 9px; font-weight: 700; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 10px; padding-bottom: 5px;
+      border-bottom: 1px solid var(--accent);
+    }
+    .s-list { list-style: none; }
+    .s-list li { font-size: 12px; color: var(--lgray); margin-bottom: 6px; display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
+    .s-list li::before { content: '›'; color: var(--accent); font-weight: 700; font-size: 14px; flex-shrink: 0; line-height: 1.2; }
+    .s-list .sub { font-size: 11px; color: var(--mgray); margin-left: 16px; margin-top: 1px; margin-bottom: 6px; display: block; }
+
+    .s-contact li { gap: 8px; }
+    .s-contact .icon { color: var(--accent); flex-shrink: 0; }
+
+    .edu-block { margin-bottom: 12px; }
+    .edu-block .deg { font-size: 12px; font-weight: 600; color: var(--lgray); }
+    .edu-block .sub { font-size: 11px; color: var(--mgray); margin-top: 2px; }
+
+    /* ── MAIN ── */
+    main { background: var(--main-bg); padding: 44px 52px 60px 52px; }
+
+    .m-section { margin-bottom: 36px; }
+    .m-head {
+      font-size: 10px; font-weight: 700; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 2.2px;
+      margin-bottom: 16px; padding-bottom: 7px;
+      border-bottom: 2px solid var(--accent);
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    /* Summary */
+    .summary p { font-size: 14px; color: #222; line-height: 1.8; }
+
+    /* Achievements */
+    .achievements ul { list-style: none; }
+    .achievements ul li {
+      padding: 9px 0 9px 20px; border-bottom: 1px solid #e4eaf0;
+      position: relative; font-size: 13.5px; color: var(--body); line-height: 1.6;
+    }
+    .achievements ul li:last-child { border-bottom: none; }
+    .achievements ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 11px; }
+    .achievements ul li strong { color: var(--dark); }
+
+    /* Jobs */
+    .job { margin-bottom: 36px; }
+    .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; margin-bottom: 3px; }
+    .job-title { font-size: 15px; font-weight: 700; color: var(--dark); }
+    .job-dates { font-size: 12px; font-style: italic; color: #777; font-family: 'Roboto Mono', monospace; }
+    .job-company { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+    .job-company span { font-weight: 400; color: #888; font-size: 12px; }
+    .job-summary {
+      font-size: 13px; color: #555; font-style: italic;
+      border-left: 3px solid #ccc; padding-left: 14px;
+      margin-bottom: 16px; line-height: 1.65;
+    }
+    .sub-head { font-size: 11px; font-weight: 700; color: #334455; text-transform: uppercase; letter-spacing: 1px; margin: 18px 0 8px; }
+
+    .bullet-list { list-style: none; }
+    .bullet-list li {
+      font-size: 13px; color: var(--body);
+      padding: 5px 0 5px 20px; position: relative; line-height: 1.62;
+    }
+    .bullet-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 10px; top: 7px; }
+    .bullet-list li strong { color: var(--dark); }
+
+    .env-block {
+      margin-top: 16px; padding: 10px 14px;
+      background: #eef3f7; border-radius: 3px;
+      border-top: 1px solid #ccddee; border-bottom: 1px solid #ccddee;
+      border-left: 4px solid var(--accent); border-right: none;
+      font-size: 11px; color: #555; font-family: 'Roboto Mono', monospace; line-height: 1.7;
+    }
+    .env-block strong { color: #334455; }
+
+    @media (max-width: 800px) {
+      .wrapper { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; }
+      main { padding: 28px 20px; }
+    }
+    @media print {
+      aside { position: static; height: auto; }
+      .wrapper { grid-template-columns: 240px 1fr; }
+      body { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+<!-- ── SIDEBAR ── -->
+<aside>
+  <div class="name-block">
+    <h1>Leela Krishna<br>Marri Muni</h1>
+    <div class="role">AWS Solutions Architect</div>
+  </div>
+
+  <div class="s-section">
+    <h2>Contact</h2>
+    <ul class="s-list s-contact">
+      <li><span class="icon">✉</span><a href="mailto:krishna.marri.muni@gmail.com">krishna.marri.muni@gmail.com</a></li>
+      <li><span class="icon">☎</span>+1 (571) 363-1363</li>
+      <li><span class="icon">⌖</span>Arlington, VA, USA</li>
+      <li><span class="icon">🔗</span><a href="https://linkedin.com/in/leela-krishna-marri-muni" target="_blank">linkedin.com/in/leela-krishna-marri-muni</a></li>
+    </ul>
+  </div>
+
+  <div class="s-section">
+    <h2>AWS Certifications</h2>
+    <ul class="s-list">
+      <li>Solutions Architect<span class="sub">Associate</span></li>
+      <li>Security Specialty<span class="sub">Specialty</span></li>
+      <li>AI Practitioner<span class="sub">Foundational</span></li>
+    </ul>
+  </div>
+
+  <div class="s-section">
+    <h2>Architecture & Design</h2>
+    <ul class="s-list">
+      <li>AWS Well-Architected Framework</li>
+      <li>Solution Design & Trade-off Analysis</li>
+      <li>Microservices & Domain Design</li>
+      <li>Event-Driven Architecture</li>
+      <li>Multi-Region HA & DR Design</li>
+      <li>API Gateway & Integration Patterns</li>
+      <li>FinOps & Cost Optimisation</li>
+      <li>Multi-Cloud (AWS + Azure)</li>
+    </ul>
+  </div>
+
+  <div class="s-section">
+    <h2>AWS Services</h2>
+    <ul class="s-list">
+      <li>EC2 · EKS · ECS · Lambda</li>
+      <li>S3 · RDS/Aurora · DynamoDB</li>
+      <li>VPC · Transit Gateway · Route 53</li>
+      <li>CloudFront · API Gateway · ALB</li>
+      <li>IAM · STS · KMS · Secrets Manager</li>
+      <li>SNS · SQS · EventBridge · Kafka</li>
+      <li>CloudWatch · Config · GuardDuty</li>
+      <li>CloudFormation · CDK · Terraform</li>
+    </ul>
+  </div>
+
+  <div class="s-section">
+    <h2>Azure</h2>
+    <ul class="s-list">
+      <li>AKS · Azure AD · RBAC</li>
+      <li>Virtual Networks · NSGs</li>
+      <li>Azure DevOps Pipelines</li>
+      <li>Azure Monitor · Log Analytics</li>
+    </ul>
+  </div>
+
+  <div class="s-section">
+    <h2>DevOps & IaC</h2>
+    <ul class="s-list">
+      <li>Terraform · Helm · GitOps</li>
+      <li>Jenkins · GitHub Actions</li>
+      <li>Docker · Kubernetes</li>
+      <li>CI/CD Pipeline Design</li>
+    </ul>
+  </div>
+
+  <div class="s-section">
+    <h2>Backend & Integration</h2>
+    <ul class="s-list">
+      <li>Java 17 · Spring Boot 3.x</li>
+      <li>Kafka · gRPC · REST · OAuth2</li>
+      <li>MongoDB · PostgreSQL · Redis</li>
+      <li>Angular · TypeScript</li>
+    </ul>
+  </div>
+
+  <div class="s-section">
+    <h2>Observability</h2>
+    <ul class="s-list">
+      <li>Dynatrace · Prometheus · Grafana</li>
+      <li>Splunk · Loki · PagerDuty</li>
+    </ul>
+  </div>
+
+  <div class="s-section">
+    <h2>Education</h2>
+    <div class="edu-block">
+      <div class="deg">M.S. Information Assurance</div>
+      <div class="sub">Cybersecurity<br>Wilmington University · 2016–18</div>
+    </div>
+    <div class="edu-block">
+      <div class="deg">B.S. Electronics & Comm. Eng.</div>
+      <div class="sub">SCSVMV University · 2010–14</div>
+    </div>
+  </div>
+</aside>
+
+<!-- ── MAIN ── -->
+<main>
+
+  <!-- Summary -->
+  <div class="m-section summary">
+    <div class="m-head">Professional Summary</div>
+    <p>AWS Certified Solutions Architect with 7+ years of hands-on experience designing, building, and operating distributed systems and cloud infrastructure on AWS and Azure. I bring an unusual combination of depth — I've written the microservices, designed the network topology they run on, built the Helm pipelines that deploy them, and owned the IAM and identity architecture that secures them. At J.B. Hunt I was the go-to person when the platform team needed an architecture decision made: VPC design, EKS cluster topology, Kafka partition strategy, multi-datastore selection, or trade-off analysis between approaches. At Conflux I led the full architecture and migration of a 10-year-old Java EE monolith to 15+ microservices on Azure AKS — from domain decomposition through network design, CI/CD build-out, and go-live. I hold AWS certifications in Solutions Architect, Security Specialty, and AI Practitioner, and I apply the Well-Architected Framework as a lens across all five pillars — not just security.</p>
+  </div>
+
+  <!-- Achievements -->
+  <div class="m-section achievements">
+    <div class="m-head">Key Achievements</div>
+    <ul>
+      <li><strong>Architected and delivered Zero Trust platform design</strong> across 50+ AWS microservices serving 100K+ enterprise users — defined VPC segmentation, IAM least-privilege policies, STS token-based service identity, and mTLS between services. Zero critical audit findings on first review.</li>
+      <li><strong>Led end-to-end monolith-to-microservices architecture</strong> at Conflux — decomposed a 10-year-old Java EE system into 15+ independently deployable services on Azure AKS, owning the domain boundary decisions, network topology, and target-state infrastructure design.</li>
+      <li><strong>Drove platform-wide infrastructure standardisation</strong> at J.B. Hunt across 20+ microservices — designed the Helm chart structure, Groovy pipeline templates, and GitOps workflows adopted as the platform standard.</li>
+      <li><strong>Designed event-driven architecture using Kafka</strong> for a high-throughput logistics platform — made partition strategy, consumer group design, schema validation, and dead-letter queue decisions for 100K+ daily active users.</li>
+      <li><strong>Delivered Spring Boot 2.x → 3.x and Java 11 → 17 platform migration</strong> across the full service estate — coordinated dependency resolution, breaking API changes, and security baseline cleanup. Resulted in 35% performance improvement.</li>
+      <li><strong>Designed centralised identity architecture</strong> using OAuth2, OpenID Connect, and Keycloak with full RBAC and SSO across 15+ services — auth-related incidents dropped 40% after go-live.</li>
+      <li><strong>Built observability architecture from scratch</strong> — selected and integrated Dynatrace (APM), Prometheus/Grafana (metrics), and Loki (logs) — cut mean time to detect (MTTD) significantly and MTTR by 30%.</li>
+    </ul>
+  </div>
+
+  <!-- Experience -->
+  <div class="m-section">
+    <div class="m-head">Professional Experience</div>
+
+    <!-- JB Hunt -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Software Engineer III / Solutions & Cloud Engineer</div>
+        <div class="job-dates">Jan 2021 – Aug 2025</div>
+      </div>
+      <div class="job-company">J.B. Hunt Transport Services, Inc. <span>· Arlington, VA</span></div>
+      <div class="job-summary">Core engineer and architecture resource on the Loads platform — a high-throughput logistics system processing millions of transactions daily for 100K+ enterprise users. Owned the full stack: backend microservices, Kafka event-driven pipelines, Angular UI, cloud infrastructure design, Helm pipeline automation, and identity architecture. Regularly consulted by the platform architect on infrastructure and design decisions.</div>
+
+      <div class="sub-head">Application Architecture & Backend Engineering</div>
+      <ul class="bullet-list">
+        <li>Designed and built microservices in <strong>Java 17 / Spring Boot 3.x</strong> — made REST vs gRPC trade-off decisions per service, defined API contracts, and established error handling and input validation patterns adopted across the platform.</li>
+        <li>Designed the platform's <strong>event-driven architecture using Kafka</strong> — owned partition count decisions, consumer group topology, schema registry integration, and dead-letter queue strategy for high-throughput load event processing.</li>
+        <li>Selected and implemented <strong>multi-datastore strategy</strong> across the platform — MongoDB for document data, PostgreSQL/DB2 for transactional records, Elasticsearch for search, Redis for caching — with field-level encryption and parameterised queries throughout.</li>
+        <li>Built Angular UI feature modules and components for internal dashboards — made component architecture decisions and established frontend data binding and rendering patterns for the team.</li>
+        <li>Wrote and maintained <strong>Spring Batch jobs</strong> for audit log processing, compliance reporting, and data pipeline tasks — designed retry, partitioning, and scheduling strategies.</li>
+        <li>Led <strong>Spring Boot 2.x → 3.x and Java 11 → 17 platform migration</strong> — assessed impact across the service estate, coordinated dependency resolution, cleaned deprecated security configs. 35% performance gain.</li>
+      </ul>
+
+      <div class="sub-head">AWS Infrastructure & Cloud Architecture</div>
+      <ul class="bullet-list">
+        <li>Designed the <strong>AWS infrastructure architecture</strong> for the Loads platform — multi-AZ VPC with public/private subnet segmentation, Transit Gateway for cross-account connectivity, Route 53 for service discovery and failover routing, and ALB for traffic distribution.</li>
+        <li>Architected the <strong>EKS cluster topology</strong> — node group sizing and auto-scaling policies, namespace strategy, network policies, pod identity configuration, and Vault-based secret injection. Made repeatable across dev, staging, and production.</li>
+        <li>Designed <strong>IAM architecture</strong> across all platform services — least-privilege policies, STS token-based service-to-service auth, role boundaries, and Zero Trust workload identity. Passed internal audit with zero critical findings.</li>
+        <li>Owned <strong>Terraform IaC</strong> for the platform — wrote reusable modules for VPC, EKS, RDS, S3, and IAM. Eliminated manual provisioning and enforced consistent baselines across AWS and Azure environments.</li>
+        <li>Integrated <strong>AWS Secrets Manager and HashiCorp Vault</strong> — designed secrets lifecycle and rotation strategy, eliminated credentials from environment variables and CI/CD configs platform-wide.</li>
+        <li>Wrote <strong>Python tooling</strong> to automate IAM access reviews and compliance reporting — saved significant manual effort each quarter and fed into audit evidence packages.</li>
+      </ul>
+
+      <div class="sub-head">DevOps & Platform Engineering</div>
+      <ul class="bullet-list">
+        <li>Led the <strong>Helm-based CI/CD standardisation</strong> — designed chart structure, Groovy-based Jenkins pipeline templates, and GitOps release workflows adopted across all 20+ microservices. Defined the platform's deployment contract.</li>
+        <li>Hardened <strong>Kubernetes and AKS clusters</strong> — pod security policies, network policies, namespace RBAC, and Vault secret injection. Made the configuration repeatable and drift-free across environments.</li>
+        <li>Integrated <strong>CI/CD quality gates</strong> — SAST, DAST, container image scanning (Aqua Security), dependency checks, and IaC policy validation. Builds with critical issues cannot reach production.</li>
+      </ul>
+
+      <div class="sub-head">Identity & Integration Architecture</div>
+      <ul class="bullet-list">
+        <li>Designed and implemented <strong>centralised identity platform</strong> using OAuth2, OpenID Connect, and Keycloak — RBAC, SSO, and service-to-service auth across 15+ services. Auth incidents dropped 40% within months of go-live.</li>
+        <li>Wrote a <strong>shared Java/Spring auth library</strong> — OAuth2 token validation, JWT parsing, Spring Security filter chains, RBAC annotations — adopted across 15+ services as the team standard.</li>
+        <li>Enforced <strong>mTLS between services</strong> and managed secrets through AWS Secrets Manager — eliminated plaintext credentials from all environment configurations.</li>
+      </ul>
+
+      <div class="sub-head">Observability & Production Operations</div>
+      <ul class="bullet-list">
+        <li>Designed the <strong>observability stack</strong> — selected Dynatrace for APM, Prometheus/Grafana for metrics, Loki for log aggregation, and PagerDuty for on-call routing. Cut MTTR by 30% through structured runbooks and post-mortems.</li>
+        <li>Led incident response for platform issues — debugged OAuth2 token failures, IAM misconfigurations, Kafka consumer lag, and expired certs — and wrote RCAs that prevented recurrence.</li>
+        <li>Managed Splunk SIEM integration, ServiceNow incident tracking, and kept architecture decisions documented in Jira across sprints.</li>
+      </ul>
+
+      <div class="sub-head">Technical Leadership & Mentoring</div>
+      <ul class="bullet-list">
+        <li>Mentored four engineers (junior to mid) on cloud architecture patterns, distributed systems design, and platform fundamentals — pair programming and structured code review.</li>
+        <li>Worked closely with PMs and senior architects on roadmap planning — translated architecture decisions into sprint work and kept infrastructure improvements from being deprioritised.</li>
+        <li>Supported NIST and CIS compliance requirements and led audit preparation across the platform.</li>
+      </ul>
+
+      <div class="env-block"><strong>Environment:</strong> AWS (EC2, S3, IAM, STS, VPC, Transit Gateway, Route 53, ALB, EKS, RDS, DynamoDB, SNS, SQS, API Gateway, GuardDuty, CloudWatch, Config, Secrets Manager, KMS), Azure (AKS, Azure AD), Java 17, Spring Boot 3.x, Spring Security, Spring Batch, Angular, TypeScript, Kafka, MongoDB, Elasticsearch, PostgreSQL, DB2, Redis, OAuth2, OIDC, Keycloak, Helm, Groovy, Go, Terraform, Kubernetes, Aqua Security, Jenkins, GitHub Actions, GitOps, Dynatrace, Prometheus, Grafana, PagerDuty, Loki, Splunk, ServiceNow, Python, REST APIs, gRPC</div>
+    </div>
+
+    <!-- Conflux -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Software Engineer / Cloud Engineer</div>
+        <div class="job-dates">Oct 2018 – Jan 2021</div>
+      </div>
+      <div class="job-company">Conflux Systems Inc. <span>· Alpharetta, GA</span></div>
+      <div class="job-summary">Owned the architecture and delivery of a full cloud migration programme — decomposing a 10-year-old Java EE monolith into 15+ microservices on Azure AKS. Responsible for the target-state infrastructure design, service boundary decisions, CI/CD build-out, and production go-live. Covered the full stack: backend services, Angular UIs, Kafka pipelines, and data layer.</div>
+
+      <div class="sub-head">Cloud Migration Architecture</div>
+      <ul class="bullet-list">
+        <li>Led the architecture of the <strong>monolith-to-microservices migration</strong> — evaluated domain boundaries, assessed coupling and data ownership across the legacy system, and produced the target-state design for 15+ independently deployable services on Azure AKS.</li>
+        <li>Designed the <strong>Azure AKS target infrastructure</strong> — virtual network topology, subnet segmentation, namespace strategy, network policies, and mTLS between services from day one. Made the architecture decisions, not just the implementation.</li>
+        <li>Designed the <strong>AWS network foundation</strong> — VPC segmentation, subnet design, NACLs, and security group architecture — aligned to NIST 800-53 and reviewed with the client's compliance team.</li>
+        <li>Built backend services and <strong>event-driven Kafka pipeline architecture</strong> for real-time data processing — made partitioning, consumer group, and schema design decisions as part of the migration.</li>
+        <li>Worked across <strong>MongoDB, Elasticsearch, SQL Server, and DB2</strong> throughout the migration — assessed which data belonged in which store, redesigned schemas, and established safe query and encryption patterns.</li>
+        <li>Built Angular enterprise dashboards — established frontend architecture patterns, CSP headers, CSRF protection, and role-based rendering.</li>
+        <li>Designed and tuned <strong>Spring Batch jobs</strong> for data migration, ETL, and scheduled processing — made decisions on partitioning, retry, and scheduling strategies throughout the migration programme.</li>
+      </ul>
+
+      <div class="sub-head">DevOps & Infrastructure Automation</div>
+      <ul class="bullet-list">
+        <li>Built <strong>Jenkins CI/CD pipelines from scratch</strong> for all 15+ microservices — designed the pipeline stages, made the tool selections (SAST, DAST, dependency scanning), and established the deployment contract for the platform.</li>
+        <li>Used <strong>Terraform</strong> to automate all infrastructure provisioning — wrote modules for AKS, virtual networks, Azure AD, and AWS VPC. Established consistent baselines between AWS and Azure environments.</li>
+        <li>Designed <strong>OAuth2, RBAC, and JWT-based auth</strong> across all migrated services using Spring Security — both service-to-service and user-facing flows. Made the identity architecture decisions for the new platform.</li>
+        <li>Ran vulnerability assessments across the migrated platform and worked with the incident response team on RCA write-ups and preventive control design.</li>
+      </ul>
+
+      <div class="env-block"><strong>Environment:</strong> Azure (AKS, Azure AD, Virtual Networks), AWS (EC2, S3, IAM, VPC, CloudWatch), Java, Spring Boot, Spring Security, Spring Batch, Angular, TypeScript, Kafka, MongoDB, Elasticsearch, SQL Server, DB2, OAuth2, JWT, RBAC, Terraform, Jenkins, SAST/DAST, Kubernetes, Helm, Docker, Python, REST APIs, ELK Stack</div>
+    </div>
+  </div>
+
+</main>
+</div>
+</body>
+</html>
